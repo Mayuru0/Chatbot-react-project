@@ -22,23 +22,28 @@ function App() {
   return (
     <div className="bg-gray-600  h-screen    ">
     <div className=" flex justify-center items-center  ">
+    <img src="./public/v-unscreen.gif" className=" w-48 h-28 -mx-6"/>
      <h1 className=" font-semibold text-[50px] mt-10  ">RoboChat</h1>
-
-     <video autoPlay muted loop className="mx-auto">
-        <source src="./public/v.mp4" type="video/mp4" />
+  {/*
+     <video autoPlay muted loop className="mx-auto ">
+        <source src="./public/v-vmake.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
-    </div>
+  </video>   */}
+       
+    </div> 
+     <div className="mx-auto"> <h4 className="font-bold text-center ">Wellcome to Robochat</h4></div>
+   
 
 
      <div className=" flex justify-center items-center mx-auto mt-10">
-    <textarea 
-     value={question} 
-     onChange={(e) => setQuestion(e.target.value)}
-     cols="30" rows="10"
-     placeholder="Type your message here..."
-     className="border rounded  w-full bg-slate-400"
-    ></textarea>
+     <textarea 
+ value={question} 
+ onChange={(e) => setQuestion(e.target.value)}
+ cols="30" rows="10"
+ placeholder="Type your message here..."
+ className="border rounded w-full  text-black"
+></textarea>
+
    </div>
 
    <button className="flex justify-center items-center mt-4 w-60 mx-auto rounded-full bg-blue-500 py-3 text-center text-white hover:bg-blue-700 hover:text-black" onClick={generateAnswer}>Generate Answer</button>
