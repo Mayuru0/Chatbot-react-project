@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-
-import "./App.css";
+import { SiAnswer } from "react-icons/si";
+//import "./App.css";
 
 function App() {
   const[question,setQuestion]=useState("")
@@ -20,21 +20,40 @@ function App() {
   }
 
   return (
-    <>
-      <h1 className="bg-red-400">Chat AI</h1>
+    <div className="bg-gray-600  h-screen    ">
+    <div className=" flex justify-center items-center  ">
+     <h1 className=" font-semibold text-[50px] mt-10  ">RoboChat</h1>
+
+     <video autoPlay muted loop className="mx-auto">
+        <source src="./public/v.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
 
-       <textarea value ={question} 
-       onChange={(e) => setQuestion(e.target.value)}
-       cols="30" rows="10"
-       placeholder="Type your message here..."
-       className="border rounded w-full"
-       ></textarea>
-      <button onClick={generateAnswer}>Generate Answer</button>
+     <div className=" flex justify-center items-center mx-auto mt-10">
+    <textarea 
+     value={question} 
+     onChange={(e) => setQuestion(e.target.value)}
+     cols="30" rows="10"
+     placeholder="Type your message here..."
+     className="border rounded  w-full bg-slate-400"
+    ></textarea>
+   </div>
 
+   <button className="flex justify-center items-center mt-4 w-60 mx-auto rounded-full bg-blue-500 py-3 text-center text-white hover:bg-blue-700 hover:text-black" onClick={generateAnswer}>Generate Answer</button>
 
-      <pre>{Answer}</pre>
-    </>
+     
+   
+    
+    <div class="mb-6 mt-10 flex justify-center items-center">
+   
+    <SiAnswer className="justify-center items-center w-10 mt-5 h-10" />
+    <input type="text" id="large-input" class="w-full h-80 block  p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={Answer}/>
+</div>
+   
+   </div>
+   
   );
 }
 
